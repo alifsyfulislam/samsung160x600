@@ -37,7 +37,6 @@ var myMoveHandler = (event) => {
 
 }
 var scrollImage = () => {
-    console.log(leftData[0]);
     if (Math.abs(leftData[0])>= 665) {
         swipe_box.style.display = "none";
     }
@@ -200,7 +199,7 @@ function checkIftarTime(todayDate, curTime) {
     var setTime = time[0]*60*60 + time[1]*60;
     var diffTime = setTime - curTime;
     if (diffTime<setTime && diffTime>=0){
-        title.innerHTML = " ইফতারের সময় বাকি ";
+        title.innerHTML = " à¦‡à¦«à¦¤à¦¾à¦°à§‡à¦° à¦¸à¦®à§Ÿ à¦¬à¦¾à¦•à¦¿ ";
         counter.innerHTML = printTimer(diffTime);
     }
 }
@@ -211,13 +210,13 @@ function checkSehriTime(todayDate, curTime) {
     var diffTime = setTime - curTime;
 
     if (diffTime<setTime && diffTime>=0){
-        title.innerHTML = " সেহেরীর সময় বাকি ";
+        title.innerHTML = " à¦¸à§‡à¦¹à§‡à¦°à§€à¦° à¦¸à¦®à§Ÿ à¦¬à¦¾à¦•à¦¿ ";
         counter.innerHTML = printTimer(diffTime);
     }
     else {
         var lastTime = setTime+24*60*60;
         var sehriEnd = lastTime - curTime;
-        title.innerHTML = " সেহেরীর সময় বাকি ";
+        title.innerHTML = " à¦¸à§‡à¦¹à§‡à¦°à§€à¦° à¦¸à¦®à§Ÿ à¦¬à¦¾à¦•à¦¿ ";
         counter.innerHTML = printTimer(sehriEnd);
     }
 }
@@ -266,8 +265,6 @@ number_submit.addEventListener("click",submitNumber);
 // window.top.location.href
 
 function submitNumber(){
-    console.log(mobValue+'samsung');
-
     var xhttp = new XMLHttpRequest();
     if(!submitted && mobileOk){
         xhttp.onreadystatechange = function() {
@@ -276,7 +273,6 @@ function submitNumber(){
                 submitted=true;
                 label_box.style.display="none";
                 number_submit_area.innerHTML='<b>Thank You.</b>';
-                number_submit_area.style.left="120px";
             }
         };
         xhttp.open("POST", '//srpp.cubex.tech/samsung/ramadan/info/index.php', true);
@@ -288,4 +284,3 @@ function submitNumber(){
 document.querySelector(".learnmore").addEventListener("click",function(){
     window.open("https://www.facebook.com/watch/?v=427786334666392&utm_source=wizards&utm_medium=cpc&utm_campaign=ce%20tv&utm_term=lpv&utm_content=CETV_samsung","_blank");
 });
-
